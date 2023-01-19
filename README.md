@@ -32,3 +32,26 @@ Body :-
 ### Get All blog posts
 
 Endpoint:localhost:5000/api/blog/
+
+### Create a Blog Post 
+#### POST request
+Endpoint:localhost:5000/api/blog/add
+
+Body :-
+
+
+
+![image](https://user-images.githubusercontent.com/97692286/213543936-1309ec8f-bbd5-481a-95cc-8531b7818d7d.png)
+
+### Update a Blog Post
+#### PUT request
+Endpoint:localhost:5000/api/blog/update/:id
+
+Body:-
+
+
+
+![image](https://user-images.githubusercontent.com/97692286/213544307-0f8663ba-0dc3-4fc3-af87-a90ec55a0d7a.png)
+
+
+
