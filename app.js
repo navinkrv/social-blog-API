@@ -21,3 +21,4 @@ mongoose.connect('mongodb+srv://navinkrv:gafUL6lEoyP4mblM@cluster0.j4ihttk.mongo
 
 
 
+// --experimental-modules --es-module-specifier-resolution=node
