@@ -1,7 +1,11 @@
-import express from "express";
-import mongoose from "mongoose";
-import router from "./routes/user-routes.js";
-import blogRouter from "./routes/blog-routes";
+// import express from "express";
+// import mongoose from "mongoose";
+const express= require("express")
+const mongoose= require("mongoose")
+// import router from "./routes/user-routes.js";
+// import blogRouter from "./routes/blog-routes";
+const router = require("./routes/user-routes")
+const blogRouter = require("./routes/blog-routes")
 
 const app=express();
 app.use(express.json())

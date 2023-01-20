@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
-import Blog from "../model/Blog"
-import User from "../model/User";
+const mongoose= require("mongoose")
+const Blog = require("../model/Blog")
+const User = require("../model/User")
 
-export const getAllBlog= async (req,res,next)=>{
+ const getAllBlog= async (req,res,next)=>{
     let blogs;
     try{
         blogs= await Blog.find()
@@ -20,7 +20,7 @@ export const getAllBlog= async (req,res,next)=>{
 }
 
 
-export const addBlog= async (req,res,next)=>{
+ const addBlog= async (req,res,next)=>{
     const {title,description,image,user}=req.body;
     let existingUser;
     try{
@@ -51,7 +51,7 @@ export const addBlog= async (req,res,next)=>{
     }
     res.status(200).json(blog)
 }
-export const updateBlog= async (req,res,next)=>{
+ const updateBlog= async (req,res,next)=>{
     const {title,description}=req.body;
     const blogId= req.params.id;
     let blog;
@@ -72,7 +72,7 @@ export const updateBlog= async (req,res,next)=>{
      
 }
 
-export const getById= async (req,res,next)=>{
+ const getById= async (req,res,next)=>{
     let blog;
     const blogId=req.params.id;
     try{
@@ -86,7 +86,7 @@ export const getById= async (req,res,next)=>{
     res.status(200).json({blog})
 }
 
-export const deleteBlog=async (req,res,next)=>{
+ const deleteBlog=async (req,res,next)=>{
     const id=req.params.id;
     let blog;
     let existingUser;
@@ -107,7 +107,7 @@ await blog.user.save();
 }
 
 
-   export const getByUser=async (req,res,next)=>{
+    const getByUser=async (req,res,next)=>{
     let userId=req.params.id;
     let userBlogs;
     try{
@@ -121,3 +121,5 @@ await blog.user.save();
     return res.status(200).json({blogs:userBlogs})
 
 }
+
+module.exports={getAllBlog,getById,getByUser,addBlog,updateBlog,deleteBlog}

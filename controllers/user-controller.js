@@ -1,6 +1,6 @@
-import User from "../model/User"
-import bcrypt from "bcryptjs"
-export  const getAllUser= async (req,res,next)=>{
+const User=require("../model/User")
+const bcrypt = require("bcryptjs")
+   const getAllUser= async (req,res,next)=>{
     let users;
     try{
         users= await User.find();
@@ -16,7 +16,7 @@ export  const getAllUser= async (req,res,next)=>{
     }
 }
 
-export const signup = async(req,res,next)=>{
+  const signup = async(req,res,next)=>{
     const {name,email,password} = req.body;
     let existingUser;
     try{
@@ -49,7 +49,7 @@ export const signup = async(req,res,next)=>{
     
 }
 
-export const login = async (req,res,next)=>{
+  const login = async (req,res,next)=>{
     const {email,password} = req.body;
 
     let existingUser;
@@ -71,3 +71,5 @@ if(!existingUser){
     return res.status(200).json({msg:"login success"})
 }
 }
+
+module.exports={login,signup,getAllUser}
