@@ -15,7 +15,7 @@ app.use("/api/blog",blogRouter)
 
 
 mongoose.connect('mongodb+srv://navinkrv:gafUL6lEoyP4mblM@cluster0.j4ihttk.mongodb.net/?retryWrites=true&w=majority').then(()=>{
-    app.listen(5000); 
+    app.listen(process.env.PORT || 5000); 
 }).then(()=>{
     console.log('connected')
 }).catch((err)=>{
